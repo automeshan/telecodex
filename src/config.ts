@@ -96,6 +96,10 @@ function resolveWorkspace(): string {
   if (isRunningInDocker()) {
     return "/workspace";
   }
+  const envWorkspace = optionalString(process.env.CODEX_WORKSPACE);
+  if (envWorkspace) {
+    return path.resolve(envWorkspace);
+  }
   return process.cwd();
 }
 

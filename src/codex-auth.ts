@@ -11,7 +11,7 @@ export interface LoginResult {
   message: string;
 }
 
-const CODEX_CLI = "codex";
+const CODEX_CLI = process.env.CODEX_CLI_PATH || "/Users/automeshan/.bun/bin/codex";
 const COMMAND_TIMEOUT_MS = 10_000;
 const AUTH_CACHE_TTL_MS = 30_000;
 
